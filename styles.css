@@ -1,0 +1,395 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.navbar .number {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.navbar .menu-icon {
+    font-size: 36px;
+    cursor: pointer;
+    margin-right: 20px; /* Adjust this value to move the burger button */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 60px; /* Adjust for the fixed navbar */
+}
+
+.content {
+    background-color: #ddd;
+    padding: 50px;
+    margin-top: -200px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%; /* Keep the same width */
+    height: 650px; /* Increase the height as needed */
+
+    /* Flexbox centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #666;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 36px;
+}
+
+p {
+    font-size: 16px;
+    color: #777;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3; /* Make sure it's in front of the navbar */
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidenav a {
+    position: relative;
+    display: block;
+    padding-bottom: 10px; /* Space between text and line */
+    margin-bottom: 20px; /* Space below each section */
+    text-decoration: none;
+    color: #333333;
+  }
+
+  .sidenav a::after {
+    content: "";
+    position: absolute;
+    left: 0; /* Start line from the left */
+    bottom: 0; /* Position line at the bottom */
+    width: 50%; /* Adjust this value for line width */
+    border-bottom: 2px solid #cccccc; /* Line style */
+  }
+  
+  .sidenav a:hover::after {
+    border-bottom-color: #000000; /* Change line color on hover, if desired */
+  }
+
+.sidenav a:hover {
+    color: #000000; /* Change text color on hover, if desired */
+    border-bottom-color: #000000; /* Change line color on hover, if desired */
+  }
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.new-section {
+    display: flex;
+    align-items: center;
+    padding: 50px 50px 50px 0; /* Remove left padding */
+    margin-top: 20px; /* Add space between sections */
+    background-color: #f0f0f0; /* Light grey background to match the previous section */
+}
+
+.grey-box {
+    background-color: #aaa;
+    width: 50%; /* Adjust width here */
+    height: 400px; /* Adjust height here */
+    /* Remove margin-right to make it touch the left side */
+    margin-right: 110px; /* Add spacing between the grey box and the text */
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.text-content h2 {
+    font-size: 24px;
+    color: #666;
+    margin: 0;
+}
+
+.text-content h1 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.text-content p {
+    font-size: 16px;
+    color: #777;
+}
+
+.text-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #777;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.text-content button:hover {
+    background-color: #666;
+}
+
+.link_button {
+    width: 150px;
+}
+
+.flipped-section {
+    display: flex;
+    align-items: center;
+    padding: 50px 0 50px 50px; /* Remove right padding */
+    margin-top: 20px; /* Add space between sections */
+    background-color: #f0f0f0; /* Light grey background to match the previous section */
+    flex-direction: row-reverse; /* This will position the grey box to the right */
+}
+
+.flipped-grey-box {
+    background-color: #aaa;
+    width: 50%; /* Adjust width here */
+    height: 400px; /* Adjust height here */
+    margin-left: 20px; /* Add spacing between the text and the grey box */
+    margin-right: 0; /* Ensure there is no margin on the right side */
+}
+
+.flipped-text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.dropdown-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; /* Adjust padding as needed */
+    background-color: #ddd; /* Match the background color of the body */
+    margin-top: 20px; /* Add space between this and the previous section */
+    width: 100%; /* Center the section */
+}
+
+.dropdown {
+    width: 500px; /* Adjust this value to make the select button wider */
+    height: 75px;
+    transform: translateX(-100px);
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px; /* Space between the dropdown and the grey boxes */
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 80%; /* Adjust width as needed */
+}
+
+.box-container .grey-box {
+    background-color: #aaa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.box-container .grey-box h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.box-container .grey-box p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Individual box sizes */
+.box1 {
+    width: 60%; /* Change width as needed */
+    height: 400px; /* Change height as needed */
+    transform: translateY(-50px); /* Move box1 up */
+}
+
+.box2 {
+    width: 60%; /* Change width as needed */
+    height: 400px; /* Change height as needed */
+    transform: translateY(200px); /* Move box2 down */
+}
+
+.box3 {
+    width: 60%; /* Change width as needed */
+    height: 400px; /* Change height as needed */
+    transform: translateY(-50px); /* Move box3 up */
+}
+
+.box4 {
+    width: 60%; /* Change width as needed */
+    height: 300px; /* Change height as needed */
+}
+
+.box5 {
+    width: 100%; /* Change width as needed */
+    height: 300px; /* Change height as needed */
+    transform: translateX(350px); /* Move box5 right */
+}
+
+/* Three Block Section */
+.three-block-section {
+    display: flex;
+    justify-content: space-between; /* Ensure spacing between blocks */
+    align-items: flex-start; /* Align items to the start */
+    padding: 50px 0; /* Adjust padding as needed */
+    background-color: #ddd; /* Match the background color of the body */
+    margin-top: 20px; /* Add space between this and the previous section */
+    width: 80%; /* Adjust width of the entire section */
+    margin: 0 auto; /* Center the section */
+}
+
+.three-block-section .block {
+    background-color: #aaa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left; /* Align text to the left */
+    width: 28%; /* Adjust width of each block */
+    margin: 0 10px; /* Add spacing between blocks */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out content and button */
+    min-height: 300px; /* Set a minimum height for the block */
+}
+
+.three-block-section .block h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.three-block-section .block p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+    flex: 1; /* Allow paragraph to take remaining space */
+}
+
+.three-block-section .block button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #d1d1d1;
+    background-color: #fcfcfc;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start; /* Align button to the start of the flex container */
+    margin-top: 20px; /* Add space between paragraph and button */
+}
+
+.three-block-section .block button:hover {
+    background-color: #666;
+}
+
+/* Overlay Section */
+.overlay-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0; /* Adjust padding as needed */
+    background-color: #ddd; /* Match the background color of the body */
+    margin-top: 20px; /* Add space between this and the previous section */
+}
+
+.big-box {
+    position: relative; /* Set relative positioning */
+    background-color: #c9c9c9;
+    width: 70%; /* Adjust width as needed */
+    height: 620px; /* Adjust height as needed */
+}
+
+.overlay-box {
+    position: absolute; /* Set absolute positioning */
+    width: 300px; /* Set fixed width */
+    height: 200px; /* Set fixed height */
+    opacity: 0.9;
+}
+
+.overlay-box1 {
+    top: -40px; /* Use specific values for positioning */
+    left: -60px;
+    background-color: #707070;
+}
+
+.overlay-box2 {
+    top: 60px;
+    left: 170px;
+    background-color: #fff;
+}
+
+.overlay-box3 {
+    top: 160px;
+    left: 400px;
+    background-color: #707070;
+}
+
+.overlay-box4 {
+    top: 260px;
+    left: 630px;
+    background-color: #fff;
+}
+
+.overlay-box5 {
+    top: 360px;
+    left: 860px;
+    background-color: #707070;
+}
+
+.overlay-box6 {
+    top: 460px;
+    left: 1090px;
+    background-color: #fff;
+}
